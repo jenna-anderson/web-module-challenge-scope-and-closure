@@ -33,7 +33,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
     counter 1 uses a closure because the function nested within it is reaching outside of its own scope and into its "parent" function for count.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-     counter1 would be preferable if we wanted to keep track of different counts (i.e. different games if we added that as a parameter) while counter2 will keep track of one count.
+     counter1 would be preferable if we wanted to keep track of different counts while counter2 will keep track of one count.
 */
 
 // counter1 code
