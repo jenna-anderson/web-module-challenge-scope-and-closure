@@ -43,6 +43,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  Closure happens when a function has to reach outside of itself to reference another function or variable if it's not within that function.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,9 +65,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  Closure is used when the function inside of the personalDice function has to reach outside of itself and get name from the personalDice function parameter.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  'Dan rolled a ' will always be the same but the number he rolls could change.
 c. What is the lexical scope of `newRoll`? 
-
+  The lexical scope of newRoll is just within the function it's declared in.
 
 ### Task 3 - Stretch Goals
 
