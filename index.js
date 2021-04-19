@@ -30,10 +30,10 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   1. What is the difference between counter1 and counter2?
     counter1 has a function nested inside of it that adds one to count, while counter2 just uses one function to add one to count. counter1 returns the nested function that adds one to count, counter2 returns just count.
   2. Which of the two uses a closure? How can you tell?
-    counter 1 uses closure because the function nested within it is reaching outside of its own scope and into its "parent" function for count.
+    counter 1 uses a closure because the function nested within it is reaching outside of its own scope and into its "parent" function for count.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-     counter1 would be preferable 
+     counter1 would be preferable if we wanted to keep track of different counts (i.e. different games if we added that as a parameter) while counter2 will keep track of one count.
 */
 
 // counter1 code
@@ -128,9 +128,19 @@ Use the scoreboard function below to do the following:
      
      function scoreboard(getInningScoreCB, inningCB, inningNum) {
        let inningScoreList = [];
+       let home = 0;
+       let away = 0;
        for(let i = 0; i < inningNum; i++){
          let inningScore = getInningScoreCB(inningCB);
+          home += inningScore.Home;
+          away += inningScore.Away;
          inningScoreList.push(`Inning ${i+1}: Away ${inningScore.Away} - Home ${inningScore.Home}`);
+        }
+        if(home === away){
+          inningScoreList.push(`This game will require extra innings: Away ${away} - Home ${home}`);
+        }
+        else{
+          inningScoreList.push(`Final Score: Away ${away} - Home ${home}`);
         }
         return inningScoreList;
       }
